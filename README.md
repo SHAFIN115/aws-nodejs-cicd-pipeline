@@ -16,3 +16,5 @@ graph LR
     C --> D[CodeBuild]
     C --> E[Elastic Beanstalk]
     E --> F[Users]
+
+![AWS Node.js CI/CD Pipeline](cicd.drawio.png)
