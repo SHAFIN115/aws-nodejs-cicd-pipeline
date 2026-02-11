@@ -4,7 +4,7 @@ const os = require("os");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("AWS CodePipeline Node.js App is Live");
+  res.send("AWS CodePipeline Node.js App is Live, Just for testing");
 });
 
 const PORT = process.env.PORT || 3000;
