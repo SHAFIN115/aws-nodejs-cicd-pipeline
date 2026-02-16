@@ -27,3 +27,5 @@ graph LR
 ```
 
 ![AWS Node.js CI/CD Pipeline](https://raw.githubusercontent.com/SHAFIN115/aws-nodejs-cicd-pipeline/main/cicd.drawio.png)
+![Project Architecture](full_architecture.png)
+![Project Success](success.png)
