@@ -25,7 +25,7 @@ const ENVIRONMENT = process.env.NODE_ENV || "development";
 // Routes
 app.get("/", (req, res) => {
   res.status(200).json({
-    message: "AWS CodePipeline Node.js App is Live",
+    message: "AWS CodePipeline Node.js App is Live, Yes it is!",
     environment: ENVIRONMENT,
     deployedBy: "Shafin Junayed",
     hostname: HOSTNAME,
