@@ -1,15 +1,40 @@
 version: 0.2
 
+env:
+  variables:
+    NODE_ENV: production
+  exported-variables:
+    - NODE_ENV
+
 phases:
   install:
     runtime-versions:
       nodejs: 20
     commands:
+      - echo "Install phase started"
+      - node -v
+      - npm -v
       - npm install
+
+  pre_build:
+    commands:
+      - echo "Pre-build phase started"
+      - npm run lint || echo "No lint script found"
+      - npm run test || echo "No test script found"
+
   build:
     commands:
+      - echo "Build phase started"
+      - npm run build || echo "No build script found"
       - echo Build completed on `date`
+
+  post_build:
+    commands:
+      - echo "Post-build phase started"
+      - echo "Zipping files..."
+      - zip -r app.zip .
 
 artifacts:
   files:
     - '**/*'
+  name: my-build-artifact
