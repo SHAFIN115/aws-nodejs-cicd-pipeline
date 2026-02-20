@@ -11,14 +11,14 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - echo "Install phase started"
+      - echo "Install phase started, installing dependencies from shafin testing"
       - node -v
       - npm -v
       - npm install
 
   pre_build:
     commands:
-      - echo "Pre-build phase started"
+      - echo "Pre-build phase started for shafin testing"
       - npm run lint || echo "No lint script found"
       - npm run test || echo "No test script found"
 
@@ -32,7 +32,7 @@ phases:
     commands:
       - echo "Post-build phase started"
       - echo "Zipping files..."
-      - zip -r app.zip .
+      - zip -r app.zip . -x "node_modules/*" -x ".git/*"
 
 artifacts:
   files:
